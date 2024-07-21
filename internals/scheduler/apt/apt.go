@@ -5,12 +5,12 @@ import (
 	"os/exec"
 )
 
-type Apt struct{}
+type apt struct{}
 
-func NewApt() *Apt {
-	return &Apt{}
+func NewApt() *apt {
+	return &apt{}
 }
-func (a *Apt) Update() error {
+func (a *apt) Update() error {
 	cmd := exec.Command("apt", "update")
 	err := cmd.Run()
 	if err != nil {
@@ -22,7 +22,7 @@ func (a *Apt) Update() error {
 	return nil
 }
 
-func (a *Apt) Upgrade() error {
+func (a *apt) Upgrade() error {
 	err := a.Update()
 	if err != nil {
 		log.Println(err)
