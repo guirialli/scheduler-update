@@ -16,7 +16,7 @@ func main() {
 
 	apt := apt.NewApt()
 	flatpak := flatpak.NewFlatpak()
-	for true {
+	for {
 		go apt.Upgrade()
 		go flatpak.Update()
 		time.Sleep(1 * time.Hour)
